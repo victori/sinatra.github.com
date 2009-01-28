@@ -1,0 +1,38 @@
+Let's make a list of Sinatra-based apps!
+
+Apps:
+- http://github.com/chas/todoist-share "A read-only Sinatra microapp for sharing your Todoist.com projects"
+- http://github.com/zapnap/toopaste "Simple (Tiny) Pastie Clone Using Sinatra & DataMapper"
+- http://github.com/webs/rash "rash. ruby, sinatra, twitter & hashtags."
+- http://github.com/moomerman/frog "Frog is a full-featured blog application written using the sinatra web framework"
+- http://github.com/sr/saloon "AtomPub server implemented using Sinatra and CouchDB"
+- http://github.com/thumblemonks/grudge "Stand-alone git repository comment rater"
+- http://github.com/moomerman/snail "Snail is a web interface for Amazon Web Services (AWS) written using the sinatra web framework"
+- http://github.com/karmi/yaml_micro_chat "http://github.com/karmi/yaml_micro_chat"
+- http://github.com/Titanous/a3 "Asterisk-Adhearsion API; A Sinatra app that brings REST to Asterisk"
+- http://allan.de/git/ticketspass/master "a little sinatra app to keep track of tickets with nice console integration"
+- http://gist.github.com/29409 "Small app to control your Itunes via HTTP."
+- http://devver.net/blog/2008/11/building-a-iphone-web-app-in-under-50-lines-with-sinatra-and-iui/ "Building a iPhone web app in under 50 lines with Sinatra and iUI"
+- http://github.com/Oshuma/weewar-spy-web "Sinatra app that utilizes the WeewarSpy library to spy on your Weewar games."
+- http://github.com/jnewland/god_web/tree/master "iPhone friendly web UI for God"
+- [stuff-site](http://github.com/leethal/stuff-site) the app running
+  <http://stuff.lilleaas.net>
+- [manweb](http://github.com/Oshuma/manweb) displays manual pages
+- [runninglog](http://github.com/rb2k/runninglog) displays GPX information
+
+Sites:
+there is some infinite js alert() (unsafe app) in there...
+gotta contact the author but can't find his email
+- http://lazydog.subimage.com/ "Kill the lazy dog"
+
+Blogs running Wink:
+- http://tomayko.com/
+- http://blog.nuclearsquid.com/
+
+Blogs running Scanty:
+- http://adam.blog.heroku.com/
+
+Blogs running Marley:
+- http://www.restafari.org/
+- http://lukeredpath.co.uk/blog
+- http://railsillustrated.com/
