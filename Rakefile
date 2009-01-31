@@ -89,11 +89,20 @@ file 'api/index.html' => FileList['_sinatra', '_sinatra/**', 'Rakefile'] do |f|
   puts 'Building API docs'
   rm_rf 'api'
   Dir.chdir "_sinatra" do
-    sh <<-SH
-      hanna --charset utf8 --fmt html --inline-source --line-numbers \
-        --main README.rdoc --op ../api --title 'Sinatra API Documentation' \
-        lib/**/*.rb README.rdoc CHANGES AUTHORS
-    SH
+    begin
+      sh <<-SH
+        hanna --charset utf8 --fmt html --inline-source --line-numbers \
+          --main README.rdoc --op ../api --title 'Sinatra API Documentation' \
+          lib/**/*.rb README.rdoc CHANGES AUTHORS
+      SH
+    rescue
+      puts "[!] Hanna FAIL"
+      sh <<-SH
+        rdoc --charset utf8 --fmt html --inline-source --line-numbers \
+          --main README.rdoc --op ../api --title 'Sinatra API Documentation' \
+          lib/**/*.rb README.rdoc CHANGES AUTHORS
+      SH
+    end
   end
 end
 CLEAN.include 'api'
