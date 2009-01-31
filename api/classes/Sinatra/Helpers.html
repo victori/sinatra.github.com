@@ -1,307 +1,644 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang='en'>
-  <head>
-    <title>Module: Sinatra::Helpers [Sinatra API Documentation]</title>
-    <meta content='text/html; charset=utf8' http-equiv='Content-Type'>
-    <link href='../.././rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
-    <script type='text/javascript'>
-      //<![CDATA[
-        function popupCode(url) {
-          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
-        }
-        
-        function toggleCode(id) {
-          var code = document.getElementById(id)
-        
-          code.style.display = code.style.display != 'block' ? 'block' : 'none'
-          return true
-        }
-        
-        // Make codeblocks hidden by default
-        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
-      //]]>
-    </script>
-  </head>
-  <body class='page'>
-    <div class='class' id='wrapper'>
-      <div class='header'>
-        <h1 class='name'>
-          <span class='type'>Module</span>
-          Sinatra::Helpers
-        </h1>
-        <ol class='paths'>
-          <li>
-            <a href="../../files/lib/sinatra/base_rb.html">lib/sinatra/base.rb</a>
-          </li>
-        </ol>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>: Sinatra::Helpers [Sinatra API Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+  <div id="fileHeader">
+    <h1></h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>
+
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td></td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+  <div id="contextContent">
+
+   </div>
+
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+
+        <a href="#M000035">attachment</a>&nbsp;&nbsp;
+
+        <a href="#M000039">back</a>&nbsp;&nbsp;
+
+        <a href="#M000028">body</a>&nbsp;&nbsp;
+
+        <a href="#M000034">content_type</a>&nbsp;&nbsp;
+
+        <a href="#M000030">error</a>&nbsp;&nbsp;
+
+        <a href="#M000038">etag</a>&nbsp;&nbsp;
+
+        <a href="#M000037">last_modified</a>&nbsp;&nbsp;
+
+        <a href="#M000033">media_type</a>&nbsp;&nbsp;
+
+        <a href="#M000031">not_found</a>&nbsp;&nbsp;
+
+        <a href="#M000029">redirect</a>&nbsp;&nbsp;
+
+        <a href="#M000036">send_file</a>&nbsp;&nbsp;
+
+        <a href="#M000032">session</a>&nbsp;&nbsp;
+
+        <a href="#M000027">status</a>&nbsp;&nbsp;
+
       </div>
-      <div id='content'>
-        <div id='text'>
-          <div id='method-list'>
-            <h2>Methods</h2>
-            <h3>public instance</h3>
-            <ol>
-              <li><a href="#M000034">attachment</a></li>
-              <li><a href="#M000027">body</a></li>
-              <li><a href="#M000033">content_type</a></li>
-              <li><a href="#M000029">error</a></li>
-              <li><a href="#M000037">etag</a></li>
-              <li><a href="#M000036">last_modified</a></li>
-              <li><a href="#M000032">media_type</a></li>
-              <li><a href="#M000030">not_found</a></li>
-              <li><a href="#M000028">redirect</a></li>
-              <li><a href="#M000035">send_file</a></li>
-              <li><a href="#M000031">session</a></li>
-              <li><a href="#M000026">status</a></li>
-            </ol>
+    </div>
+
+  </div>
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+    <!-- if method_list -->
+
+    <div id="methods">
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000035" class="method-signature">
+
+          <span class="method-name">attachment</span><span class="method-args">(filename=nil)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Set the Content-Disposition to &#8220;attachment&#8221; with the specified
+filename, instructing the user agents to prompt to save.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 120</span>
+120:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attachment</span>(<span class="ruby-identifier">filename</span>=<span class="ruby-keyword kw">nil</span>)
+121:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Disposition'</span>] = <span class="ruby-value str">'attachment'</span>
+122:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filename</span>
+123:         <span class="ruby-identifier">params</span> = <span class="ruby-value str">'; filename=&quot;%s&quot;'</span> <span class="ruby-operator">%</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">filename</span>)
+124:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Disposition'</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">params</span>
+125:       <span class="ruby-keyword kw">end</span>
+126:     <span class="ruby-keyword kw">end</span>
+</pre>
           </div>
-          <div id='section'>
-            <div id='methods'>
-              <h2>Public instance methods</h2>
-              <div class='public-instance method' id='method-M000034'>
-                <a name='M000034'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>attachment</span>
-                  <span class='arguments'>(filename=nil)</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Set the Content-Disposition to &#8220;attachment&#8221; with the specified
-                  filename, instructing the user agents to prompt to save.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000034-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000034-source'>     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 120</span>&#x000A;120:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attachment</span>(<span class="ruby-identifier">filename</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;121:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Disposition'</span>] = <span class="ruby-value str">'attachment'</span>&#x000A;122:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filename</span>&#x000A;123:         <span class="ruby-identifier">params</span> = <span class="ruby-value str">'; filename=&quot;%s&quot;'</span> <span class="ruby-operator">%</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">filename</span>)&#x000A;124:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Disposition'</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">params</span>&#x000A;125:       <span class="ruby-keyword kw">end</span>&#x000A;126:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000027'>
-                <a name='M000027'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>body</span>
-                  <span class='arguments'>(value=nil, &amp;block)</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Set or retrieve the response body. When a block is given, evaluation is
-                  deferred until the body is read with each.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000027-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000027-source'>    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 67</span>&#x000A;67:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">body</span>(<span class="ruby-identifier">value</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)&#x000A;68:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>&#x000A;69:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">each</span> ; <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">call</span> ; <span class="ruby-keyword kw">end</span>&#x000A;70:         <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">block</span>&#x000A;71:       <span class="ruby-keyword kw">else</span>&#x000A;72:         <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">value</span>&#x000A;73:       <span class="ruby-keyword kw">end</span>&#x000A;74:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000033'>
-                <a name='M000033'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>content_type</span>
-                  <span class='arguments'>(type, params={})</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Set the Content-Type of the response body given a media type or file
-                  extension.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000033-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000033-source'>     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 107</span>&#x000A;107:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">content_type</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">params</span>={})&#x000A;108:       <span class="ruby-identifier">media_type</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">media_type</span>(<span class="ruby-identifier">type</span>)&#x000A;109:       <span class="ruby-identifier">fail</span> <span class="ruby-value str">&quot;Unknown media type: %p&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">media_type</span>.<span class="ruby-identifier">nil?</span>&#x000A;110:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">any?</span>&#x000A;111:         <span class="ruby-identifier">params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">kv</span><span class="ruby-operator">|</span> <span class="ruby-value str">&quot;%s=%s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">kv</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">', '</span>)&#x000A;112:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Type'</span>] = [<span class="ruby-identifier">media_type</span>, <span class="ruby-identifier">params</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;;&quot;</span>)&#x000A;113:       <span class="ruby-keyword kw">else</span>&#x000A;114:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Type'</span>] = <span class="ruby-identifier">media_type</span>&#x000A;115:       <span class="ruby-keyword kw">end</span>&#x000A;116:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000029'>
-                <a name='M000029'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>error</span>
-                  <span class='arguments'>(code, body=nil)</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Halt processing and return the error status provided.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000029-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000029-source'>    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 84</span>&#x000A;84:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">body</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;85:       <span class="ruby-identifier">code</span>, <span class="ruby-identifier">body</span> = <span class="ruby-value">500</span>, <span class="ruby-identifier">code</span>.<span class="ruby-identifier">to_str</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">code</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:to_str</span>&#x000A;86:       <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">body</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">nil?</span>&#x000A;87:       <span class="ruby-identifier">halt</span> <span class="ruby-identifier">code</span>&#x000A;88:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000037'>
-                <a name='M000037'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>etag</span>
-                  <span class='arguments'>(value, kind=:strong)</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Set the response entity tag (HTTP &#8216;ETag&#8217; header) and halt if
-                  conditional GET matches. The <tt>value</tt> argument is an identifier that
-                  uniquely identifies the current version of the resource. The
-                  <tt>strength</tt> argument indicates whether the etag should be used as a
-                  :strong (default) or :weak cache validator.
-                  </p>
-                  <p>
-                  When the current request includes an &#8216;If-None-Match&#8217; header
-                  with a matching etag, execution is immediately halted. If the request
-                  method is GET or HEAD, a &#8216;304 Not Modified&#8217; response is sent.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000037-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000037-source'>     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 185</span>&#x000A;185:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">etag</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">kind</span>=<span class="ruby-identifier">:strong</span>)&#x000A;186:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-value str">&quot;:strong or :weak expected&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span>[<span class="ruby-identifier">:strong</span>,<span class="ruby-identifier">:weak</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">kind</span>)&#x000A;187:       <span class="ruby-identifier">value</span> = <span class="ruby-value str">'&quot;%s&quot;'</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">value</span>&#x000A;188:       <span class="ruby-identifier">value</span> = <span class="ruby-value str">'W/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">kind</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:weak</span>&#x000A;189:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'ETag'</span>] = <span class="ruby-identifier">value</span>&#x000A;190: &#x000A;191:       <span class="ruby-comment cmt"># Conditional GET check</span>&#x000A;192:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">etags</span> = <span class="ruby-identifier">env</span>[<span class="ruby-value str">'HTTP_IF_NONE_MATCH'</span>]&#x000A;193:         <span class="ruby-identifier">etags</span> = <span class="ruby-identifier">etags</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s*,\s*/</span>)&#x000A;194:         <span class="ruby-identifier">halt</span> <span class="ruby-value">304</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">etags</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">etags</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">'*'</span>)&#x000A;195:       <span class="ruby-keyword kw">end</span>&#x000A;196:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000036'>
-                <a name='M000036'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>last_modified</span>
-                  <span class='arguments'>(time)</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Set the last modified time of the resource (HTTP
-                  &#8216;Last-Modified&#8217; header) and halt if conditional GET matches.
-                  The <tt>time</tt> argument is a Time, DateTime, or other object that
-                  responds to <tt>to_time</tt>.
-                  </p>
-                  <p>
-                  When the current request includes an &#8216;If-Modified-Since&#8217; header
-                  that matches the time specified, execution is immediately halted with a
-                  &#8216;304 Not Modified&#8217; response.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000036-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000036-source'>     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 168</span>&#x000A;168:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last_modified</span>(<span class="ruby-identifier">time</span>)&#x000A;169:       <span class="ruby-identifier">time</span> = <span class="ruby-identifier">time</span>.<span class="ruby-identifier">to_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_time</span>)&#x000A;170:       <span class="ruby-identifier">time</span> = <span class="ruby-identifier">time</span>.<span class="ruby-identifier">httpdate</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:httpdate</span>)&#x000A;171:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Last-Modified'</span>] = <span class="ruby-identifier">time</span>&#x000A;172:       <span class="ruby-identifier">halt</span> <span class="ruby-value">304</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-value str">'HTTP_IF_MODIFIED_SINCE'</span>]&#x000A;173:       <span class="ruby-identifier">time</span>&#x000A;174:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000032'>
-                <a name='M000032'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>media_type</span>
-                  <span class='arguments'>(type)</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Look up a media type by file extension in Rack&#8217;s mime registry.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000032-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000032-source'>     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 101</span>&#x000A;101:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">media_type</span>(<span class="ruby-identifier">type</span>)&#x000A;102:       <span class="ruby-constant">Base</span>.<span class="ruby-identifier">media_type</span>(<span class="ruby-identifier">type</span>)&#x000A;103:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000030'>
-                <a name='M000030'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>not_found</span>
-                  <span class='arguments'>(body=nil)</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Halt processing and return a 404 Not Found.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000030-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000030-source'>    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 91</span>&#x000A;91:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_found</span>(<span class="ruby-identifier">body</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;92:       <span class="ruby-identifier">error</span> <span class="ruby-value">404</span>, <span class="ruby-identifier">body</span>&#x000A;93:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000028'>
-                <a name='M000028'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>redirect</span>
-                  <span class='arguments'>(uri, *args)</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Halt processing and redirect to the URI provided.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000028-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000028-source'>    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 77</span>&#x000A;77:     <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">redirect</span><span class="ruby-identifier">redirect</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;78:       <span class="ruby-identifier">status</span> <span class="ruby-value">302</span>&#x000A;79:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Location'</span>] = <span class="ruby-identifier">uri</span>&#x000A;80:       <span class="ruby-identifier">halt</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;81:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000035'>
-                <a name='M000035'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>send_file</span>
-                  <span class='arguments'>(path, opts={})</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Use the contents of the file at <tt>path</tt> as the response body.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000035-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000035-source'>     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 129</span>&#x000A;129:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">send_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">opts</span>={})&#x000A;130:       <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">path</span>)&#x000A;131:       <span class="ruby-identifier">last_modified</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">mtime</span>&#x000A;132: &#x000A;133:       <span class="ruby-identifier">content_type</span> <span class="ruby-identifier">media_type</span>(<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:type</span>]) <span class="ruby-operator">||</span>&#x000A;134:         <span class="ruby-identifier">media_type</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">path</span>)) <span class="ruby-operator">||</span>&#x000A;135:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Type'</span>] <span class="ruby-operator">||</span>&#x000A;136:         <span class="ruby-value str">'application/octet-stream'</span>&#x000A;137: &#x000A;138:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Length'</span>] <span class="ruby-operator">||=</span> (<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:length</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">to_s</span>&#x000A;139: &#x000A;140:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:disposition</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'attachment'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:filename</span>]&#x000A;141:         <span class="ruby-identifier">attachment</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:filename</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">path</span>&#x000A;142:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:disposition</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'inline'</span>&#x000A;143:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Disposition'</span>] = <span class="ruby-value str">'inline'</span>&#x000A;144:       <span class="ruby-keyword kw">end</span>&#x000A;145: &#x000A;146:       <span class="ruby-identifier">halt</span> <span class="ruby-constant">StaticFile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value str">'rb'</span>)&#x000A;147:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>&#x000A;148:       <span class="ruby-identifier">not_found</span>&#x000A;149:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000031'>
-                <a name='M000031'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>session</span>
-                  <span class='arguments'>()</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Access the underlying <a href="../Rack.html">Rack</a> session.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000031-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000031-source'>    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 96</span>&#x000A;96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">session</span>&#x000A;97:       <span class="ruby-identifier">env</span>[<span class="ruby-value str">'rack.session'</span>] <span class="ruby-operator">||=</span> {}&#x000A;98:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-              <div class='public-instance method' id='method-M000026'>
-                <a name='M000026'>      </a>
-                <div class='synopsis'>
-                  <span class='name'>status</span>
-                  <span class='arguments'>(value=nil)</span>
-                </div>
-                <div class='description'>
-                  <p>
-                  Set or retrieve the response status code.
-                  </p>
-                </div>
-                <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000026-source'); return false">
-                    [show source]
-                  </a>
-                  <pre id='M000026-source'>    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 60</span>&#x000A;60:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">status</span>(<span class="ruby-identifier">value</span>=<span class="ruby-keyword kw">nil</span>)&#x000A;61:       <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span> = <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>&#x000A;62:       <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span>&#x000A;63:     <span class="ruby-keyword kw">end</span></pre>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
-      <div id='footer-push'></div>
+
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000039" class="method-signature">
+
+          <span class="method-name">back</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Sugar for redirect (example: redirect back)
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000039-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 199</span>
+199:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">back</span> ; <span class="ruby-identifier">request</span>.<span class="ruby-identifier">referer</span> ; <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000028" class="method-signature">
+
+          <span class="method-name">body</span><span class="method-args">(value=nil, &amp;block)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Set or retrieve the response body. When a block is given, evaluation is
+deferred until the body is read with each.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 67</span>
+67:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">body</span>(<span class="ruby-identifier">value</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+68:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+69:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">each</span> ; <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">call</span> ; <span class="ruby-keyword kw">end</span>
+70:         <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">block</span>
+71:       <span class="ruby-keyword kw">else</span>
+72:         <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">value</span>
+73:       <span class="ruby-keyword kw">end</span>
+74:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000034" class="method-signature">
+
+          <span class="method-name">content_type</span><span class="method-args">(type, params={})</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Set the Content-Type of the response body given a media type or file
+extension.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000034-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 107</span>
+107:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">content_type</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">params</span>={})
+108:       <span class="ruby-identifier">media_type</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">media_type</span>(<span class="ruby-identifier">type</span>)
+109:       <span class="ruby-identifier">fail</span> <span class="ruby-value str">&quot;Unknown media type: %p&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">media_type</span>.<span class="ruby-identifier">nil?</span>
+110:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">any?</span>
+111:         <span class="ruby-identifier">params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">kv</span><span class="ruby-operator">|</span> <span class="ruby-value str">&quot;%s=%s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">kv</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">', '</span>)
+112:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Type'</span>] = [<span class="ruby-identifier">media_type</span>, <span class="ruby-identifier">params</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;;&quot;</span>)
+113:       <span class="ruby-keyword kw">else</span>
+114:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Type'</span>] = <span class="ruby-identifier">media_type</span>
+115:       <span class="ruby-keyword kw">end</span>
+116:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000030" class="method-signature">
+
+          <span class="method-name">error</span><span class="method-args">(code, body=nil)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Halt processing and return the error status provided.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000030-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000030-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 84</span>
+84:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">body</span>=<span class="ruby-keyword kw">nil</span>)
+85:       <span class="ruby-identifier">code</span>, <span class="ruby-identifier">body</span>    = <span class="ruby-value">500</span>, <span class="ruby-identifier">code</span>.<span class="ruby-identifier">to_str</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">code</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:to_str</span>
+86:       <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">body</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">nil?</span>
+87:       <span class="ruby-identifier">halt</span> <span class="ruby-identifier">code</span>
+88:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000038" class="method-signature">
+
+          <span class="method-name">etag</span><span class="method-args">(value, kind=:strong)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Set the response entity tag (HTTP &#8216;ETag&#8217; header) and halt if
+conditional GET matches. The <tt>value</tt> argument is an identifier that
+uniquely identifies the current version of the resource. The
+<tt>strength</tt> argument indicates whether the etag should be used as a
+:strong (default) or :weak cache validator.
+</p>
+<p>
+When the current request includes an &#8216;If-None-Match&#8217; header
+with a matching etag, execution is immediately halted. If the request
+method is GET or HEAD, a &#8216;304 Not Modified&#8217; response is sent.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 185</span>
+185:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">etag</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">kind</span>=<span class="ruby-identifier">:strong</span>)
+186:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-value str">&quot;:strong or :weak expected&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span>[<span class="ruby-identifier">:strong</span>,<span class="ruby-identifier">:weak</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">kind</span>)
+187:       <span class="ruby-identifier">value</span> = <span class="ruby-value str">'&quot;%s&quot;'</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">value</span>
+188:       <span class="ruby-identifier">value</span> = <span class="ruby-value str">'W/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">kind</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:weak</span>
+189:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'ETag'</span>] = <span class="ruby-identifier">value</span>
+190: 
+191:       <span class="ruby-comment cmt"># Conditional GET check</span>
+192:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">etags</span> = <span class="ruby-identifier">env</span>[<span class="ruby-value str">'HTTP_IF_NONE_MATCH'</span>]
+193:         <span class="ruby-identifier">etags</span> = <span class="ruby-identifier">etags</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s*,\s*/</span>)
+194:         <span class="ruby-identifier">halt</span> <span class="ruby-value">304</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">etags</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">etags</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">'*'</span>)
+195:       <span class="ruby-keyword kw">end</span>
+196:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000037" class="method-signature">
+
+          <span class="method-name">last_modified</span><span class="method-args">(time)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Set the last modified time of the resource (HTTP
+&#8216;Last-Modified&#8217; header) and halt if conditional GET matches.
+The <tt>time</tt> argument is a Time, DateTime, or other object that
+responds to <tt>to_time</tt>.
+</p>
+<p>
+When the current request includes an &#8216;If-Modified-Since&#8217; header
+that matches the time specified, execution is immediately halted with a
+&#8216;304 Not Modified&#8217; response.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 168</span>
+168:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">last_modified</span>(<span class="ruby-identifier">time</span>)
+169:       <span class="ruby-identifier">time</span> = <span class="ruby-identifier">time</span>.<span class="ruby-identifier">to_time</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_time</span>)
+170:       <span class="ruby-identifier">time</span> = <span class="ruby-identifier">time</span>.<span class="ruby-identifier">httpdate</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:httpdate</span>)
+171:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Last-Modified'</span>] = <span class="ruby-identifier">time</span>
+172:       <span class="ruby-identifier">halt</span> <span class="ruby-value">304</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">time</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-value str">'HTTP_IF_MODIFIED_SINCE'</span>]
+173:       <span class="ruby-identifier">time</span>
+174:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000033" class="method-signature">
+
+          <span class="method-name">media_type</span><span class="method-args">(type)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Look up a media type by file extension in Rack&#8217;s mime registry.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000033-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 101</span>
+101:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">media_type</span>(<span class="ruby-identifier">type</span>)
+102:       <span class="ruby-constant">Base</span>.<span class="ruby-identifier">media_type</span>(<span class="ruby-identifier">type</span>)
+103:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000031" class="method-detail">
+        <a name="M000031"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000031" class="method-signature">
+
+          <span class="method-name">not_found</span><span class="method-args">(body=nil)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Halt processing and return a 404 Not Found.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000031-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 91</span>
+91:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_found</span>(<span class="ruby-identifier">body</span>=<span class="ruby-keyword kw">nil</span>)
+92:       <span class="ruby-identifier">error</span> <span class="ruby-value">404</span>, <span class="ruby-identifier">body</span>
+93:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000029" class="method-signature">
+
+          <span class="method-name">redirect</span><span class="method-args">(uri, *args)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Halt processing and redirect to the URI provided.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000029-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 77</span>
+77:     <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">redirect</span><span class="ruby-identifier">redirect</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+78:       <span class="ruby-identifier">status</span> <span class="ruby-value">302</span>
+79:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Location'</span>] = <span class="ruby-identifier">uri</span>
+80:       <span class="ruby-identifier">halt</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+81:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000036" class="method-signature">
+
+          <span class="method-name">send_file</span><span class="method-args">(path, opts={})</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Use the contents of the file at <tt>path</tt> as the response body.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 129</span>
+129:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">send_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">opts</span>={})
+130:       <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">path</span>)
+131:       <span class="ruby-identifier">last_modified</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">mtime</span>
+132: 
+133:       <span class="ruby-identifier">content_type</span> <span class="ruby-identifier">media_type</span>(<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:type</span>]) <span class="ruby-operator">||</span>
+134:         <span class="ruby-identifier">media_type</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">path</span>)) <span class="ruby-operator">||</span>
+135:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Type'</span>] <span class="ruby-operator">||</span>
+136:         <span class="ruby-value str">'application/octet-stream'</span>
+137: 
+138:       <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Length'</span>] <span class="ruby-operator">||=</span> (<span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:length</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">size</span>).<span class="ruby-identifier">to_s</span>
+139: 
+140:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:disposition</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'attachment'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:filename</span>]
+141:         <span class="ruby-identifier">attachment</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:filename</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">path</span>
+142:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">:disposition</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'inline'</span>
+143:         <span class="ruby-identifier">response</span>[<span class="ruby-value str">'Content-Disposition'</span>] = <span class="ruby-value str">'inline'</span>
+144:       <span class="ruby-keyword kw">end</span>
+145: 
+146:       <span class="ruby-identifier">halt</span> <span class="ruby-constant">StaticFile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value str">'rb'</span>)
+147:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>
+148:       <span class="ruby-identifier">not_found</span>
+149:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000032" class="method-detail">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000032" class="method-signature">
+
+          <span class="method-name">session</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Access the underlying <a href="../Rack.html">Rack</a> session.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000032-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 96</span>
+96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">session</span>
+97:       <span class="ruby-identifier">env</span>[<span class="ruby-value str">'rack.session'</span>] <span class="ruby-operator">||=</span> {}
+98:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000027" class="method-signature">
+
+          <span class="method-name">status</span><span class="method-args">(value=nil)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Set or retrieve the response status code.
+</p>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/sinatra/base.rb, line 60</span>
+60:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">status</span>(<span class="ruby-identifier">value</span>=<span class="ruby-keyword kw">nil</span>)
+61:       <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span> = <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>
+62:       <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span>
+63:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+
     </div>
-    <div id='footer'>
-      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
-    </div>
-  </body>
+
+
+
+
+  </div>
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
 </html>
