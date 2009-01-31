@@ -22,6 +22,9 @@ body {
   padding: 0 5em;
 }
 
+.cleaner
+  { clear: both; height: 0; line-height: 0; width: 0; border: 0; font-size: 1px; }
+
 /* HEADER */
 #head {
   text-align: center;
@@ -248,12 +251,31 @@ body#about #content strong, body#about #content a {
 }
 
 /* THE BOOK */
-#book .maruku_toc {
-  margin:1em 0;
-}
-#book .maruku_toc ul:first-child {
-  padding-left:0;
-}
-#book pre {
+
+#book .maruku_toc ul { font-weight: bold; padding: 0em; }
+#book .maruku_toc ul ul { font-weight: normal; padding: 0em 0 0.5em 1em; }
+#book .maruku_toc ul ul ul { font-weight: normal; padding: 0em 0 0.25em 0.5em; }
+#book .maruku_toc ul ul ul ul { font-weight: normal; padding: 0em 0 0.1em 0.25em; }
+
+#book .maruku_toc
+  { color: #000;
+    background: #d8dde3;
+    padding: 1em 2em;
+    margin: 0; }
+#book .maruku_toc a
+  { color: #4c5966; }
+#book .maruku_toc a:hover
+  { color: #1177DD; }
+
+#book #content h1
+  { padding: 1em 0 0 0;
+    margin: 1em 0 1em 0;
+    border-top: 4px solid #525c66; }
+#book #content h1:first-child
+  { padding: 0;
+    margin: 1em 0 1em 0;
+    border: none; }
+
+#book #content pre {
   overflow:auto;
 }
