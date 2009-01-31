@@ -14,7 +14,7 @@ Applications
 - [Integrity](http://integrityapp.com) the easy and fun
   Continuous Integration server
 - [Wink](http://github.com/rtomayko/wink) minimalist blogging engine
-- [Markey](http://github.com/karmi/marley) the blog engine
+- [Marley](http://github.com/karmi/marley) the blog engine
   without &lt;textareas&gt;
 - [Scanty](http://github.com/adamwiggins/scanty) an even more minimalist
   blogging engine
