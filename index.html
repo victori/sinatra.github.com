@@ -4,31 +4,37 @@ title: Sinatra
 id: home
 ---
 
-<div class='pipe nav'>
-<pre><a href='intro.html'>README</a>
-<a href='documentation.html'>Documentation</a>
-<a href='contributing.html'>Contribute</a>
-<a href='blog.html'>Blog</a>
-<a href='http://github.com/sinatra/sinatra/'>Code</a>
-<a href='about.html'>About</a>
-</pre>
-<p>Sinatra</p>
+<div class="tagline">
+  <p>Sinatra is a micro-framework <small>(150KB)</small> and a domain-specific language for easy development of RESTful web applications in Ruby. In fact, this easy:</p>
 </div>
 
-<div class='pipe ruby'>
-<pre><code>require 'rubygems'
+<pre>
+<code># application.rb
+require 'rubygems'
 require 'sinatra'
-get '/hi' do
-  "Hello World!"
-end</code></pre>
-<p>Put this in<br>your pipe</p>
-</div>
+get '/' do
+  'Hello world!'
+end</code>
+</pre>
 
-<div class='pipe shell'>
-<pre><code>$ gem install sinatra
-$ ruby hi.rb
+<h2>Get on stage</h2>
+
+<pre>
+<code>$ sudo gem install sinatra
+$ ruby application.rb
 == Sinatra has taken the stage ...
->> Listening on 0.0.0.0:4567
-</code></pre>
-<p>and smoke it</p>
-</div>
+>> Listening on 0.0.0.0:4567</code>
+</pre>
+
+
+<h2>Get to know the score</h2>
+
+<p>Sinatra’s Readme will give you a quick overview of what’s possible. <a href="./intro.html">Read more »</a></p>
+
+<h2>More ditties</h2>
+
+<ul class="more_ditties">
+  <li>Follow Sinatra updates on <a href="/blog.html">blog</a>, <a href="http://www.rubyflow.com/search/sinatra">Rubyflow</a> and <a href="http://www.twitter.com/sinatrarb">Twitter</a></li>
+  <li>Study the <a href="/documentation.html">documentation</a></li>
+  <li>Get in <a href="/contributing.html">touch</a></li>
+</ul>
